@@ -1,4 +1,4 @@
-package com.ozanturcan.camelcasetextview
+package com.ozanturcan.smartnumerictextview
 
 import org.junit.Test
 

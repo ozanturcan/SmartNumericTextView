@@ -1,4 +1,4 @@
-package com.ozanturcan.camelcasetextview
+package com.ozanturcan.smartnumerictextview
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

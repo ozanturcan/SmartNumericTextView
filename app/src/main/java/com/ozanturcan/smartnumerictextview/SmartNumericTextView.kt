@@ -1,4 +1,4 @@
-package com.ozanturcan.camelcasetextview
+package com.ozanturcan.smartnumerictextview
 
 import android.content.Context
 import android.graphics.Typeface
