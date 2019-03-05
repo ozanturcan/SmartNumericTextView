@@ -11,7 +11,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="1098"
-            android:textSize="34dp" />
+            android:textSize="34dp"/>
 
     <TextView
             android:id="@+id/text_decimal"
@@ -20,6 +20,6 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text=".99"
-            android:textSize="28dp" />
+            android:textSize="28dp"/>
 
 </LinearLayout>

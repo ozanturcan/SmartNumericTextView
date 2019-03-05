@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,12 +8,14 @@
         tools:context=".MainActivity">
 
 
-    <com.ozanturcan.camelcasetextview.CamelCaseTextView
+    <com.ozanturcan.camelcasetextview.SmartNumericTextView
             android:layout_width="match_parent"
             android:id="@+id/camelcaseTextView"
             android:layout_height="wrap_content"
             app:textSize="34dp"
-            app:textPercentage="80"
+            app:textStyle="bold"
+            app:textPercentage="60"
+            app:suffixSymbol="₺"
             app:textColor="@color/colorAccent"
-            app:text="22.1"/>
-</android.support.constraint.ConstraintLayout>
+            app:text="21.12"/>
+</LinearLayout>
