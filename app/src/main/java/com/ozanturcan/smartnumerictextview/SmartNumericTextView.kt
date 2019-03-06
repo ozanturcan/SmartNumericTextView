@@ -5,7 +5,7 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
-import kotlinx.android.synthetic.main.camel_case_text_view.view.*
+import kotlinx.android.synthetic.main.smart_numeric_text_view.view.*
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.util.*
@@ -18,7 +18,7 @@ class SmartNumericTextView @JvmOverloads constructor(
     val currentFractionDigit = 2
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.camel_case_text_view, this, true)
+        LayoutInflater.from(context).inflate(R.layout.smart_numeric_text_view, this, true)
         attrs?.let {
 
             val styledAttributes = context.obtainStyledAttributes(it, R.styleable.SmartNumericTextView, 0, 0)

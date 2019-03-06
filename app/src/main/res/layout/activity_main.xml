@@ -10,12 +10,12 @@
 
     <com.ozanturcan.smartnumerictextview.SmartNumericTextView
             android:layout_width="match_parent"
-            android:id="@+id/camelcaseTextView"
+            android:id="@+id/smart_numeric_textView"
             android:layout_height="wrap_content"
-            app:textSize="34dp"
-            app:textStyle="bold"
-            app:textPercentage="60"
-            app:suffixSymbol="₺"
+            app:textSize="65dp"
+            app:textStyle="italic"
+            app:textPercentage="25"
+            app:suffixSymbol=""
             app:textColor="@color/colorAccent"
             app:text="21.12"/>
 </LinearLayout>
