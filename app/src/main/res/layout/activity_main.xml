@@ -9,14 +9,39 @@
 
 
     <com.ozanturcan.smartnumerictextview.SmartNumericTextView
-            android:id="@+id/smart_numeric_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:textSize="30sp"
+            app:textSize="30dp"
             app:textPercentage="70"
-            app:suffixSymbol="tl"
+            app:suffixSymbol="€"
+            app:text="1198.99"/>
+
+    <com.ozanturcan.smartnumerictextview.SmartNumericTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textSize="30dp"
+            app:textPercentage="70"
+            app:textStyle="bold"
+            app:textColor="@color/colorPrimary"
+            app:text="4.99"
+            app:suffixSymbol="kg"/>
+
+    <com.ozanturcan.smartnumerictextview.SmartNumericTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textSize="30dp"
+            app:textPercentage="50"
+            app:textStyle="italic"
+            app:textColor="@color/colorAccent"
+            app:text="750.00"/>
+
+    <com.ozanturcan.smartnumerictextview.SmartNumericTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textSize="30dp"
+            app:textPercentage="100"
+            app:textStyle="bold"
             app:textColor="@color/colorPrimary"
             app:secondaryTextColor="@color/colorPrimaryDark"
-            app:textStyle="bold"
-            app:text="21.12"/>
+            app:text="750.00"/>
 </LinearLayout>
