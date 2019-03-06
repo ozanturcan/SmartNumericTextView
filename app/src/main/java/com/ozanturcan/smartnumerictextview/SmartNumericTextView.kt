@@ -2,7 +2,9 @@ package com.ozanturcan.smartnumerictextview
 
 import android.content.Context
 import android.graphics.Typeface
+import android.support.annotation.ColorInt
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.smart_numeric_text_view.view.*
@@ -15,52 +17,58 @@ class SmartNumericTextView @JvmOverloads constructor(
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
 
-    val currentFractionDigit = 2
+    private val currentFractionDigit = 2
 
     init {
         LayoutInflater.from(context).inflate(R.layout.smart_numeric_text_view, this, true)
         attrs?.let {
-
             val styledAttributes = context.obtainStyledAttributes(it, R.styleable.SmartNumericTextView, 0, 0)
 
+
             val textValue = styledAttributes.getString(R.styleable.SmartNumericTextView_text)
-            val textColor = styledAttributes.getColor(
-                R.styleable.SmartNumericTextView_textColor,
-                resources.getColor(R.color.colorPrimary)
-            )
-            val textSize =
-                styledAttributes.getDimensionPixelSize(R.styleable.SmartNumericTextView_textSize, 22)
-            val fractionPercentage =
-                textSize * styledAttributes.getInteger(R.styleable.SmartNumericTextView_textPercentage, 70) / 100
-            val suffixSymbol =
-                styledAttributes.getString(R.styleable.SmartNumericTextView_suffixSymbol)
+            val suffixSymbol = styledAttributes.getString(R.styleable.SmartNumericTextView_suffixSymbol)
+            val textSize = styledAttributes.getDimensionPixelSize(R.styleable.SmartNumericTextView_textSize, 24)
+            val decimalPercentage = styledAttributes.getInteger(R.styleable.SmartNumericTextView_textPercentage, 100)
             val textStyle = styledAttributes.getInt(R.styleable.SmartNumericTextView_textStyle, 0)
+
+            val textColor = styledAttributes.getColor(R.styleable.SmartNumericTextView_textColor, 0xFF808080.toInt())
+            val secondaryTextColor = styledAttributes.getColor(R.styleable.SmartNumericTextView_secondaryTextColor,
+                0xfFF808080.toInt()
+            )
+
 
 
             setTextStyle(textStyle)
             setTextSizeInteger(textSize)
-            setTextSizeFraction(fractionPercentage)
-            setTextColor(textColor)
-            if (suffixSymbol.isNotEmpty()) {
+            setTextSizeDecimal((textSize * decimalPercentage) / 100)
+            setTextColor(textColor, secondaryTextColor)
+            if (!suffixSymbol.isNullOrEmpty()) {
                 setText(textValue, suffixSymbol)
             } else {
                 setText(textValue)
             }
 
-
-
-
             styledAttributes.recycle()
         }
+    }
 
+
+    private fun setTextSizeInteger(textSize: Int) {
+        text_integer.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize.toFloat())
+    }
+
+    private fun setTextSizeDecimal(textSize: Int) {
+        text_decimal.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize.toFloat())
+    }
+
+
+    private fun setDecimalColor(colorID: Int) {
+        text_decimal.setTextColor(colorID)
 
     }
 
-    fun setText(value: String?) {
-        setText(value, null)
-    }
-
-    fun setText(value: String?, symbols: String?) {
+    //region Public Functions
+    fun setText(value: String?, symbols: String? = "") {
         if (value?.toFloatOrNull() != null) {
             val dfFormat = DecimalFormat(("#" + getDecimalSeparator() + "##"))
             dfFormat.maximumFractionDigits = currentFractionDigit
@@ -88,18 +96,17 @@ class SmartNumericTextView @JvmOverloads constructor(
         }
     }
 
-    private fun setTextColor(colorID: Int) {
-        text_integer.setTextColor(colorID)
-        text_decimal.setTextColor(colorID)
+    fun setTextSize(textSize: Int, decimalPercentage: Int = 100) {
+        setTextSizeInteger(textSize)
+        setTextSizeDecimal((decimalPercentage * textSize) / 100)
     }
 
-    private fun setTextSizeInteger(textSize: Int) {
-        text_integer.textSize = textSize.toFloat()
+    fun setTextColor(@ColorInt primaryColorID: Int, @ColorInt secondaryColorID: Int = primaryColorID) {
+        text_integer.setTextColor(primaryColorID)
+        setDecimalColor(secondaryColorID)
     }
+    //endregion
 
-    private fun setTextSizeFraction(textSize: Int) {
-        text_decimal.textSize = textSize.toFloat()
-    }
 
     private fun getDecimalSeparator(locale: Locale): Char {
         val formatSymbols = DecimalFormatSymbols.getInstance(locale)

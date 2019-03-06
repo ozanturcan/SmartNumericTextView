@@ -5,17 +5,13 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity" android:orientation="vertical">
 
 
     <com.ozanturcan.smartnumerictextview.SmartNumericTextView
-            android:layout_width="match_parent"
             android:id="@+id/smart_numeric_textView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:textSize="65dp"
-            app:textStyle="italic"
-            app:textPercentage="25"
-            app:suffixSymbol=""
-            app:textColor="@color/colorAccent"
+            app:textSize="30sp"
             app:text="21.12"/>
 </LinearLayout>

@@ -3,6 +3,7 @@
     <declare-styleable name="SmartNumericTextView">
         <attr name="textSize" format="dimension" />
         <attr name="textColor" format="color" />
+        <attr name="secondaryTextColor" format="color" />
         <attr name="text" format="string" />
         <attr name="textPercentage" format="integer"/>
         <attr name="suffixSymbol" format="string"/>
