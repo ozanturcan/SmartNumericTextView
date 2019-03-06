@@ -32,7 +32,8 @@ class SmartNumericTextView @JvmOverloads constructor(
             val textStyle = styledAttributes.getInt(R.styleable.SmartNumericTextView_textStyle, 0)
 
             val textColor = styledAttributes.getColor(R.styleable.SmartNumericTextView_textColor, 0xFF808080.toInt())
-            val secondaryTextColor = styledAttributes.getColor(R.styleable.SmartNumericTextView_secondaryTextColor,
+            val secondaryTextColor = styledAttributes.getColor(
+                R.styleable.SmartNumericTextView_secondaryTextColor,
                 0xfFF808080.toInt()
             )
 
