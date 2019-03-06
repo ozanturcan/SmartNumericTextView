@@ -13,5 +13,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:textSize="30sp"
+            app:textPercentage="70"
+            app:suffixSymbol="tl"
+            app:textColor="@color/colorPrimary"
+            app:secondaryTextColor="@color/colorPrimaryDark"
+            app:textStyle="bold"
             app:text="21.12"/>
 </LinearLayout>
