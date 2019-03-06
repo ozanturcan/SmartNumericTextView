@@ -39,9 +39,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:textSize="30dp"
-            app:textPercentage="100"
             app:textStyle="bold"
             app:textColor="@color/colorPrimary"
             app:secondaryTextColor="@color/colorPrimaryDark"
+            app:suffixSymbol="€"
             app:text="750.00"/>
 </LinearLayout>
