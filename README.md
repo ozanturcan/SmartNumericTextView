@@ -1,4 +1,7 @@
 # SmartNumericTextView
+
+[![](https://jitpack.io/v/ozanturcan/SmartNumericTextView.svg)](https://jitpack.io/#ozanturcan/SmartNumericTextView)
+
 Smart Numeric TextView using for showing number with a symbol. integer and the decimal parts can be a different color and size 
 <th>
 
