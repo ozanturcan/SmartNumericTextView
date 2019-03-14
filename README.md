@@ -2,6 +2,24 @@
 
 [![](https://jitpack.io/v/ozanturcan/SmartNumericTextView.svg)](https://jitpack.io/#ozanturcan/SmartNumericTextView)
 
+Add it in your root build.gradle at the end of repositories:
+```xml
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+Step 2. Add the dependency
+```
+```xml
+
+	dependencies {
+	        implementation 'com.github.ozanturcan:SmartNumericTextView:Tag'
+	}
+```
+
 Smart Numeric TextView using for showing number with a symbol. integer and the decimal parts can be a different color and size 
 <th>
 
