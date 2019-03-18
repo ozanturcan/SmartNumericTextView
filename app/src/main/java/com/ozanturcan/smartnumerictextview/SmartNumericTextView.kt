@@ -82,7 +82,7 @@ class SmartNumericTextView @JvmOverloads constructor(
 
                 text_decimal.text = String.format(
                     "%s%s",
-                    getDecimalSeparator(), tempValue.split(getDecimalSeparator())[1], symbols
+                    getDecimalSeparator(), tempValue.split(getDecimalSeparator())[1]
                 )
             } else {
                 text_decimal.text = String.format(
