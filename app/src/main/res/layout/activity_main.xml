@@ -5,21 +5,22 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         tools:context=".MainActivity" android:orientation="vertical">
 
 
     <com.ozanturcan.smartnumerictextview.SmartNumericTextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:textSize="30dp"
+            app:textSize="30sp"
             app:textPercentage="70"
             app:suffixSymbol="€"
             app:text="1198.99"/>
 
     <com.ozanturcan.smartnumerictextview.SmartNumericTextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:textSize="30dp"
+            app:textSize="30sp"
             app:textPercentage="70"
             app:textStyle="bold"
             app:textColor="@color/colorPrimary"
@@ -27,18 +28,18 @@
             app:suffixSymbol="kg"/>
 
     <com.ozanturcan.smartnumerictextview.SmartNumericTextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:textSize="30dp"
+            app:textSize="30sp"
             app:textPercentage="50"
             app:textStyle="italic"
             app:textColor="@color/colorAccent"
             app:text="750.00"/>
 
     <com.ozanturcan.smartnumerictextview.SmartNumericTextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:textSize="30dp"
+            app:textSize="30sp"
             app:textStyle="bold"
             app:textColor="@color/colorPrimary"
             app:secondaryTextColor="@color/colorPrimaryDark"

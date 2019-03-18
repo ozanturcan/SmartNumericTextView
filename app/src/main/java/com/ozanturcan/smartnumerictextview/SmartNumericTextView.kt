@@ -6,7 +6,7 @@ import android.support.annotation.ColorInt
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
-import android.widget.FrameLayout
+import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.smart_numeric_text_view.view.*
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
@@ -14,7 +14,7 @@ import java.util.*
 
 class SmartNumericTextView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : FrameLayout(context, attrs, defStyleAttr) {
+) : LinearLayout(context, attrs, defStyleAttr) {
 
 
     private val currentFractionDigit = 2
@@ -34,7 +34,7 @@ class SmartNumericTextView @JvmOverloads constructor(
             val textColor = styledAttributes.getColor(R.styleable.SmartNumericTextView_textColor, 0xFF808080.toInt())
             val secondaryTextColor = styledAttributes.getColor(
                 R.styleable.SmartNumericTextView_secondaryTextColor,
-               textColor
+                textColor
             )
 
 
