@@ -17,7 +17,7 @@ Add the dependency
 ```xml
 
 	dependencies {
-	        implementation 'com.github.ozanturcan:SmartNumericTextView:Tag'
+	        implementation 'com.github.ozanturcan:SmartNumericTextView:v0.0.1'
 	}
 ```
 
