@@ -5,7 +5,6 @@ import android.graphics.Typeface
 import android.support.annotation.ColorInt
 import android.util.AttributeSet
 import android.util.TypedValue
-import android.view.LayoutInflater
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.smart_numeric_text_view.view.*
 import java.text.DecimalFormat
@@ -20,18 +19,35 @@ class SmartNumericTextView @JvmOverloads constructor(
     private val currentFractionDigit = 2
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.smart_numeric_text_view, this, true)
+
+//        /// My own old way
+//        LayoutInflater.from(context).inflate(R.layout.smart_numeric_text_view, this, true)
+
+
+        /// thx to @moisesportillocalles for the this suggestion, it looks the more clean way
+        /// https://medium.com/@moisesportillocalles/hi-orzan-beb9864f796
+        inflate(context, R.layout.smart_numeric_text_view, this)
+
         attrs?.let {
-            val styledAttributes = context.obtainStyledAttributes(it, R.styleable.SmartNumericTextView, 0, 0)
+            val styledAttributes =
+                context.obtainStyledAttributes(it, R.styleable.SmartNumericTextView, 0, 0)
 
 
             val textValue = styledAttributes.getString(R.styleable.SmartNumericTextView_text)
-            val suffixSymbol = styledAttributes.getString(R.styleable.SmartNumericTextView_suffixSymbol)
-            val textSize = styledAttributes.getDimensionPixelSize(R.styleable.SmartNumericTextView_textSize, 24)
-            val decimalPercentage = styledAttributes.getInteger(R.styleable.SmartNumericTextView_textPercentage, 100)
+            val suffixSymbol =
+                styledAttributes.getString(R.styleable.SmartNumericTextView_suffixSymbol)
+            val textSize = styledAttributes.getDimensionPixelSize(
+                R.styleable.SmartNumericTextView_textSize,
+                24
+            )
+            val decimalPercentage =
+                styledAttributes.getInteger(R.styleable.SmartNumericTextView_textPercentage, 100)
             val textStyle = styledAttributes.getInt(R.styleable.SmartNumericTextView_textStyle, 0)
 
-            val textColor = styledAttributes.getColor(R.styleable.SmartNumericTextView_textColor, 0xFF808080.toInt())
+            val textColor = styledAttributes.getColor(
+                R.styleable.SmartNumericTextView_textColor,
+                0xFF808080.toInt()
+            )
             val secondaryTextColor = styledAttributes.getColor(
                 R.styleable.SmartNumericTextView_secondaryTextColor,
                 textColor
